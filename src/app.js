@@ -1,4 +1,5 @@
 const express = require("express");
+const tasksRouter = require("./routes/tasks");
 
 const app = express();
 
@@ -10,5 +11,7 @@ app.get("/health", (req, res) => {
     message: "TaskSafe API está funcionando",
   });
 });
+
+app.use("/tasks", tasksRouter);
 
 module.exports = app;
