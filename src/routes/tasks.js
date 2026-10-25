@@ -6,6 +6,11 @@ const router = express.Router();
 const tasks = [];
 let nextId = 1;
 
+function resetTasks() {
+  tasks.length = 0;
+  nextId = 1;
+}
+
 const createTaskSchema = z
   .object({
     title: z.string().trim().min(3).max(100),
@@ -101,4 +106,4 @@ router.delete("/:id", (req, res) => {
   res.status(204).send();
 });
 
-module.exports = router;
+module.exports = { router, resetTasks };

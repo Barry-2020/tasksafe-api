@@ -19,7 +19,7 @@ La aplicación está construida con Node.js y Express. En esta primera versión,
 - Node.js
 - Express
 - Zod
-- Jest y Supertest — pruebas automatizadas, próximas a implementar
+- Jest y Supertest — pruebas automatizadas de los endpoints
 - Nodemon — reinicio automático durante el desarrollo
 
 ## Instalación
@@ -103,6 +103,24 @@ Una tarea debe cumplir estas reglas:
 
 Si los datos no cumplen estas reglas, la API devuelve `400 Bad Request`.
 
+## Pruebas automatizadas
+
+Ejecuta las pruebas de la API con:
+
+```bash
+npm test
+```
+
+Para consultar la cobertura de las pruebas:
+
+```bash
+npm run test:coverage
+```
+
+## Integración continua
+
+GitHub Actions ejecuta las pruebas y una auditoría de dependencias cada vez que se abre un pull request o se envían cambios a `main`.
+
 ## Persistencia temporal
 
 Actualmente las tareas se guardan en memoria. Esto significa que se perderán cuando el servidor se detenga o reinicie.
@@ -111,7 +129,6 @@ Esta decisión es intencional para la primera versión: permite concentrarse en 
 
 ## Próximos pasos
 
-- Añadir pruebas automatizadas con Jest y Supertest.
-- Configurar GitHub Actions para ejecutar las pruebas en cada cambio.
-- Analizar dependencias y seguridad del proyecto.
 - Incorporar persistencia con una base de datos.
+- Añadir autenticación y autorización.
+- Publicar la API en un entorno de despliegue.
