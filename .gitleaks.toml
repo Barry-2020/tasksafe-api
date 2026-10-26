@@ -1,0 +1,7 @@
+title = "Reglas de demostración de TaskSafe API"
+
+[[rules]]
+id = "tasksafe-demo-token"
+description = "Token ficticio para explicar el escaneo de secretos"
+regex = '''TASKSAFE_DEMO_TOKEN_[A-Z0-9]{24}'''
+secretGroup = 0
