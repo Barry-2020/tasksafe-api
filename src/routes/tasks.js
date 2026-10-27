@@ -10,7 +10,6 @@ function resetTasks() {
   tasks.length = 0;
   nextId = 1;
 }
-
 const createTaskSchema = z
   .object({
     title: z.string().trim().min(3).max(100),
