@@ -1,4 +1,4 @@
-const request = require("supertest");
+const request = require("supertest");   //Simula peticiones
 const app = require("../src/app");
 const { resetTasks } = require("../src/routes/tasks");
 

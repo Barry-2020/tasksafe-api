@@ -1,0 +1,27 @@
+name: Demostración de secretos
+
+on:
+  push:
+    branches: [security-demo]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: write
+  
+jobs:
+  secret-scan:
+    name: Buscar secretos ficticios
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Obtener el código
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Buscar secretos ficticios
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
